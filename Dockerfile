@@ -4,6 +4,15 @@ FROM rust:latest AS builder
 # docker pull rustlang/rust:nightly-slim
 # docker pull rust:latest
 
+
+# 安装 Python 3.11 开发库
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+        python3.11-dev \
+        pkg-config \
+        libssl-dev && \
+    rm -rf /var/lib/apt/lists/*
+    
 # 设置工作目录
 WORKDIR /app
 
