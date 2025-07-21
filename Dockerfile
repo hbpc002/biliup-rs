@@ -1,6 +1,6 @@
 # 使用官方 Rust 镜像作为基础镜像
 # FROM rust:1.67 as builder
-FROM rust:1.80-slim AS builder
+FROM rust:nightly-slim AS builder
 
 # 设置工作目录
 WORKDIR /app
