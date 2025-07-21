@@ -21,4 +21,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: hbpc/biliup:latest
+          tags: hbpc002/biliup:latest
