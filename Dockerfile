@@ -32,7 +32,9 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # 将构建的二进制文件从构建镜像中复制到运行时镜像
-COPY --from=builder /app/target/release/biliup-rs /usr/local/bin/biliup-rs
+# COPY --from=builder /app/target/release/biliup-rs /usr/local/bin/biliup-rs
+COPY --from=builder /app/target/release/biliup-cli /usr/local/bin/biliup-cli
 
 # 设置容器启动命令
-ENTRYPOINT ["/usr/local/bin/biliup-rs"]
+# ENTRYPOINT ["/usr/local/bin/biliup-rs"]
+ENTRYPOINT ["/usr/local/bin/biliup-cli"]
